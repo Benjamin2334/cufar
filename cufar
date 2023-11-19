@@ -1,0 +1,52 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+ifstream fin("cufar.in");
+ofstream fout("cufar.out");
+int long long x, y;
+int long long b, n, s=0, nr, div1, cer, i=2, v[1000001], a[1000001], suma=0;
+int main()
+{
+    fin>>cer>>n;
+    if(cer==1){
+            fin>>nr>>div1;
+    while(nr!=1){
+            if(nr%i==0){
+        while(nr%i==0){
+            nr=nr/i;
+
+        }
+    s++;
+            }
+            i++;
+            if(i*i>nr && nr!=1){
+                s++;
+                i=nr;
+                nr=1;
+            }
+        if(s==div1){
+            fout<<i;
+            break;
+        }
+    }
+    }
+if(cer==2){
+        for(int i=1;i<=n;i++){
+            fin>>x>>y;
+            a[x]=y;
+        }
+    for(int i=2;i<=1000000;i++){
+            if(v[i]==0){
+        for(int j=i;j<=1000000;j+=i){
+            v[j]++;
+            if(v[j]==a[j]){
+                suma+=i;
+
+            }
+        }
+            }
+    }
+    fout<<suma;
+}
+    return 0;
+}
